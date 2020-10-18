@@ -29,13 +29,13 @@ urlpatterns = [
 urlpatterns += [
         path('about-us/', views.flatpage, {'url': '/about-us/'}, name='about'),
         path('terms/', views.flatpage, {'url': '/terms/'}, name='terms'),
-        path('about-author/', views.flatpage, {'url': '/about-author/'}, name='about-author'),
-        path('about-spec/', views.flatpage, {'url': '/about-spec/'}, name='about-spec'),
+        path('about-author/', views.flatpage, {'url': '/about-author/'}, name='about-author'), # noqa
+        path('about-spec/', views.flatpage, {'url': '/about-spec/'}, name='about-spec'), # noqa
 ]
 
 if settings.DEBUG:
     import debug_toolbar
 
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) # noqa
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) # noqa
     urlpatterns += (path("__debug__/", include(debug_toolbar.urls)),)

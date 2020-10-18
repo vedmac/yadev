@@ -6,7 +6,7 @@ venv/
 sent_emails/
 __pycache__/
 *.py[cod]
-
+keys.py
 
 .idea
 .DS_Store

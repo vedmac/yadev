@@ -5,9 +5,9 @@
 
 <main role="main" class="container">
     <div class="row">
-
-        {% include "includes/author_card.html" with author=author posts=author.posts %}
-
+        <div class="col-md-3 mb-3 mt-1">
+            {% include "includes/author_card.html" with author=author posts=author.posts %}
+        </div>
         <div class="col-md-9">
             {% include "includes/post_card.html" with post=post %}
             {% include "includes/comments.html" with form=form items=post.comments.select_related %}

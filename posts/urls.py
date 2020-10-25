@@ -15,6 +15,8 @@ urlpatterns = [
     path('500/', views.server_error, name="server_error"),
     path("<str:username>/<int:post_id>/comment", views.add_comment,
          name="add_comment"),
+    path("<username>/<int:post_id>/delete", views.post_delete,
+         name="post_delete"),
     path("<str:username>/follow/", views.profile_follow,
          name="profile_follow"),
     path("<str:username>/unfollow/", views.profile_unfollow,

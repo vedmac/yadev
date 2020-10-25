@@ -107,6 +107,15 @@ def server_error(request):
 
 
 @login_required
+def post_delete(request, username, post_id):
+    if username == request.user.username:
+        post = get_object_or_404(Post, id=post_id)
+        post.delete()
+        return redirect('index')
+    return redirect('index')
+    
+
+@login_required
 def add_comment(request, username, post_id):
     form = CommentForm(request.POST or None)
     if form.is_valid():
